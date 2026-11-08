@@ -1,0 +1,3225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday Thu Uyên ❤️ Chúc Mừng Sinh Nhật Công Chúa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-pink: #ff5388;
+      --deep-pink: #ff2a70;
+      --soft-pink: #ffb8d0;
+      --gold: #ffd700;
+      --rose-gold: #f7a8b8;
+      --night-bg: #07040d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--night-bg);
+      background-image: 
+        radial-gradient(circle at 18% 18%, rgba(255, 42, 112, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 82% 82%, rgba(155, 89, 182, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(255, 83, 136, 0.12) 0%, transparent 55%);
+      background-attachment: fixed;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #fff;
+      position: relative;
+    }
+
+    /* ================= UNIFIED DUAL CANVAS ================= */
+    #skyCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #mainCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    /* ================= MAIN CONTAINER ================= */
+    .app-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    /* Header Bar: Symmetrical "💖 Thu Uyên" & "Thu Uyên 💖" */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+      pointer-events: auto;
+      z-index: 25;
+      user-select: none;
+    }
+
+    .brand-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      color: #ffe6f0;
+      text-shadow: 0 0 12px rgba(255, 83, 136, 0.9), 0 0 24px rgba(255, 42, 112, 0.6);
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: default;
+    }
+
+    .brand-name-clickable {
+      cursor: pointer;
+      display: inline-block;
+      transition: transform 0.25s ease, text-shadow 0.25s ease, filter 0.25s ease;
+    }
+    .brand-name-clickable:hover {
+      transform: scale(1.08);
+      text-shadow: 0 0 16px rgba(255, 105, 180, 1), 0 0 32px rgba(255, 42, 112, 0.9);
+      filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.7));
+    }
+    .brand-name-clickable:active {
+      transform: scale(0.96);
+    }
+
+    .brand-title .heart-icon {
+      color: #ff3366;
+      animation: miniBeat 1.2s infinite ease-in-out;
+      display: inline-block;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .brand-title .heart-icon:hover {
+      transform: scale(1.35);
+      filter: drop-shadow(0 0 10px #ff2a70);
+    }
+    .brand-title .heart-icon:active {
+      transform: scale(0.95);
+    }
+
+    /* Secret Easter Egg: Cascading Falling Heart Rain */
+    .heart-rain-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 120;
+      overflow: hidden;
+    }
+
+    .falling-heart {
+      position: absolute;
+      top: -60px;
+      user-select: none;
+      pointer-events: none;
+      will-change: transform, opacity;
+      animation: heartRainFall linear forwards;
+    }
+
+    @keyframes heartRainFall {
+      0% {
+        top: -50px;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg) scale(0.7);
+      }
+      12% {
+        opacity: 0.95;
+      }
+      50% {
+        transform: translateX(var(--drift, 35px)) rotate(var(--rot, 160deg)) scale(1.1);
+      }
+      85% {
+        opacity: 0.85;
+      }
+      100% {
+        top: 106vh;
+        opacity: 0;
+        transform: translateX(calc(var(--drift, 35px) * 1.6)) rotate(calc(var(--rot, 160deg) * 2)) scale(0.85);
+      }
+    }
+
+    /* Central Content Area */
+    .view-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 920px;
+      pointer-events: none;
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: visible;
+    }
+
+    .view-panel {
+      display: none;
+      pointer-events: auto;
+      width: 100%;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .view-panel.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    /* Scrollable panels with top-aligned scroll so headers are never cut */
+    #panelCake, #panelCounter {
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+    #panelCake::-webkit-scrollbar,
+    #panelCounter::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* FIXED LETTER SCROLLING: Allows full scrolling to see title and full content */
+    #panelLetter {
+      width: 100%;
+      max-width: 660px;
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 105, 180, 0.45) transparent;
+      padding: 10px 10px 35px 10px;
+    }
+    #panelLetter::-webkit-scrollbar {
+      width: 6px;
+    }
+    #panelLetter::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+    }
+    #panelLetter::-webkit-scrollbar-thumb {
+      background: rgba(255, 105, 180, 0.45);
+      border-radius: 10px;
+    }
+    #panelLetter::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 105, 180, 0.75);
+    }
+
+    /* FIXED MEMORIES GALLERY: Full width display, no horizontal scrolling */
+    #panelMemories {
+      width: 100%;
+      max-width: 920px;
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      overflow-x: hidden !important;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 105, 180, 0.45) transparent;
+      padding: 10px 12px 45px 12px;
+      box-sizing: border-box;
+    }
+    #panelMemories::-webkit-scrollbar {
+      width: 6px;
+    }
+    #panelMemories::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+    }
+    #panelMemories::-webkit-scrollbar-thumb {
+      background: rgba(255, 105, 180, 0.45);
+      border-radius: 10px;
+    }
+    #panelMemories::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 105, 180, 0.75);
+    }
+
+    /* Heart panel is 100% overflow visible */
+    #panelHeart {
+      overflow: visible !important;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ================= VIEW 1: TRÁI TIM YÊU THƯƠNG ================= */
+    /* Perfectly balanced inside the heart particle formation */
+    .heart-center-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      pointer-events: none;
+      user-select: none;
+      margin-top: -118px;
+      overflow: visible;
+    }
+
+    .heart-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 5.5px;
+      text-transform: uppercase;
+      color: #ffd7eb;
+      text-shadow: 0 0 10px rgba(255, 105, 180, 0.9), 0 0 20px rgba(255, 42, 112, 0.7);
+      margin-bottom: 18px;
+      display: block;
+      line-height: 1.4;
+      overflow: visible;
+    }
+
+    .heart-main-name {
+      font-family: 'Great Vibes', 'Dancing Script', cursive;
+      font-size: 64px;
+      line-height: 1.15;
+      color: #ffffff;
+      text-shadow: 
+        0 0 10px rgba(255, 105, 180, 1),
+        0 0 20px rgba(255, 42, 112, 0.9),
+        0 0 35px rgba(255, 42, 112, 0.7),
+        0 0 55px rgba(255, 20, 147, 0.5);
+      letter-spacing: 1.5px;
+      margin: 0 0 14px 0;
+      animation: textPulse 2.4s ease-in-out infinite;
+      white-space: nowrap;
+      overflow: visible;
+      pointer-events: auto !important;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+    .heart-main-name:hover {
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 24px rgba(255, 105, 180, 1));
+    }
+    .heart-main-name:active {
+      transform: scale(0.96);
+    }
+
+    .heart-date-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 200, 220, 0.35);
+      padding: 5px 16px;
+      border-radius: 22px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 1.8px;
+      box-shadow: 0 0 16px rgba(255, 83, 136, 0.35);
+    }
+
+    /* Floating Quote Box - Perfectly compact & symmetrical (zero empty void) */
+    .floating-quote-box {
+      position: absolute;
+      bottom: 95px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 14;
+      pointer-events: auto;
+      background: rgba(18, 9, 28, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 200, 220, 0.24);
+      border-radius: 20px;
+      padding: 10px 24px;
+      width: fit-content;
+      max-width: min(88vw, 440px);
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45), 0 0 15px rgba(255, 83, 136, 0.15);
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .floating-quote-box:hover {
+      background: rgba(36, 14, 48, 0.9);
+      border-color: rgba(255, 83, 136, 0.5);
+      transform: translateX(-50%) translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 22px rgba(255, 83, 136, 0.3);
+    }
+    .quote-text {
+      font-size: 13.5px;
+      font-style: italic;
+      color: #ffe6f0;
+      line-height: 1.55;
+      margin: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* Biểu tượng chuột/tay ấn 1 2 lần nhấp nháy rồi biến mất (tọa độ absolute không làm lệch ô lời chúc) */
+    .quote-mouse-hint {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      pointer-events: none;
+      display: none;
+      transition: opacity 0.4s ease;
+      z-index: 15;
+    }
+    .quote-mouse-hint.show {
+      display: flex;
+      opacity: 1;
+    }
+    .mouse-icon-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+    }
+    .mouse-pointer-icon {
+      font-size: 16px;
+      display: inline-block;
+      animation: doubleClickGesture 1.6s ease-in-out infinite;
+      filter: drop-shadow(0 0 8px rgba(255, 83, 136, 0.9));
+    }
+    .mouse-click-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      margin-left: -5px;
+      border: 2px solid rgba(255, 105, 180, 0.85);
+      border-radius: 50%;
+      opacity: 0;
+      animation: clickRipple 1.6s ease-out infinite;
+    }
+    .mouse-click-ring.ring-2 {
+      animation-delay: 0.8s;
+    }
+    @keyframes doubleClickGesture {
+      0% { transform: translateY(0) scale(1); }
+      18% { transform: translateY(-4px) scale(0.88); }
+      28% { transform: translateY(-2px) scale(1.05); }
+      50% { transform: translateY(0) scale(1); }
+      68% { transform: translateY(-4px) scale(0.88); }
+      78% { transform: translateY(-2px) scale(1.05); }
+      100% { transform: translateY(0) scale(1); }
+    }
+    @keyframes clickRipple {
+      0%, 45% { width: 8px; height: 8px; margin-top: -4px; margin-left: -4px; opacity: 0; }
+      18% { opacity: 0.9; }
+      38% { width: 28px; height: 28px; margin-top: -14px; margin-left: -14px; opacity: 0; }
+      68% { opacity: 0.9; }
+      88% { width: 28px; height: 28px; margin-top: -14px; margin-left: -14px; opacity: 0; }
+    }
+
+    @keyframes textPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    @keyframes miniBeat {
+      0%, 100% { transform: scale(1); }
+      30% { transform: scale(1.25); }
+      50% { transform: scale(1.1); }
+      70% { transform: scale(1.25); }
+    }
+
+    /* ================= VIEW 2: THỔI NẾN BÁNH SINH NHẬT ================= */
+    .cake-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .cake-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+      color: #ffe6f0;
+      text-shadow: 0 0 22px #ff2a70;
+      margin-bottom: -3px;
+    }
+
+    .cake-subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 480px;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .interactive-cake-stage {
+      position: relative;
+      width: 250px;
+      height: 195px;
+      margin: 4px 0;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+    .interactive-cake-stage:hover {
+      transform: scale(1.02);
+    }
+
+    .cake-plate {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 230px;
+      height: 22px;
+      background: radial-gradient(ellipse at center, #ffffff 40%, #e0e0e0 70%, #a0a0a0 100%);
+      border-radius: 50%;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 105, 180, 0.35);
+    }
+
+    .cake-bottom-tier {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 185px;
+      height: 68px;
+      background: linear-gradient(to right, #ff758c, #ff7eb3, #ff758c);
+      border-radius: 14px 14px 45px 45px / 14px 14px 18px 18px;
+      box-shadow: inset 0 -8px 18px rgba(0, 0, 0, 0.22), 0 8px 24px rgba(255, 42, 112, 0.35);
+    }
+    .cake-bottom-tier::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 22px;
+      background: #fff5f8;
+      border-radius: 50%;
+      box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .cake-top-tier {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 125px;
+      height: 56px;
+      background: linear-gradient(to right, #a050bb, #e91e63, #a050bb);
+      border-radius: 12px 12px 35px 35px / 12px 12px 16px 16px;
+      box-shadow: inset 0 -7px 14px rgba(0, 0, 0, 0.25);
+    }
+    .cake-top-tier::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 100%;
+      height: 18px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    .cake-frosting-drips {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-image: radial-gradient(circle at 8px 0, #ffffff 8px, transparent 9px);
+      background-size: 16px 16px;
+      background-repeat: repeat-x;
+    }
+
+    .candle {
+      position: absolute;
+      bottom: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 44px;
+      background: repeating-linear-gradient(45deg, #ffd700, #ffd700 5px, #ffffff 5px, #ffffff 10px);
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      z-index: 5;
+    }
+    .candle::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 7px;
+      background: #333;
+    }
+
+    .flame {
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 26px;
+      background: radial-gradient(ellipse at bottom, #ffffff 10%, #ffe600 35%, #ff5722 75%, transparent 95%);
+      border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+      box-shadow: 0 0 20px #ff9800, 0 0 35px #ff5722, 0 0 55px #ff3d00;
+      animation: flicker 0.15s ease-in-out infinite alternate;
+      transform-origin: 50% 90%;
+      transition: all 0.4s ease;
+    }
+
+    .flame.blown-out {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.1);
+      pointer-events: none;
+    }
+
+    .smoke {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: rgba(220, 220, 220, 0.7);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .smoke.active {
+      animation: smokeRise 2s ease-out forwards;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+      100% { transform: translateX(-50%) scale(1.08, 0.96) rotate(3deg); }
+    }
+    @keyframes smokeRise {
+      0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.5; transform: translate(-30%, -35px) scale(3.5); }
+      100% { opacity: 0; transform: translate(-60%, -70px) scale(6); }
+    }
+
+    .cake-action-btns {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn-glow {
+      background: linear-gradient(135deg, #ff2a70, #ff758c);
+      color: #fff;
+      border: none;
+      padding: 11px 26px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(255, 42, 112, 0.6);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-glow:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(255, 42, 112, 0.8);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      padding: 11px 20px;
+      border-radius: 30px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .cake-wish-card {
+      margin-top: 12px;
+      background: rgba(24, 12, 34, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255, 215, 0, 0.55);
+      border-radius: 20px;
+      padding: 16px 24px;
+      max-width: 520px;
+      width: 100%;
+      display: none;
+      animation: wishCardReveal 0.6s ease forwards;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65), 0 0 30px rgba(255, 215, 0, 0.3);
+      position: relative;
+      z-index: 20;
+    }
+    .cake-wish-card.show {
+      display: block;
+    }
+    .cake-wish-card h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 30px;
+      color: #ffd700;
+      margin-bottom: 6px;
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+    }
+    .cake-wish-card p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #ffeef6;
+    }
+
+    @keyframes wishCardReveal {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ================= VIEW 3: LÁ THƯ TÌNH (SANG TRỌNG & HOÀN THIỆN) ================= */
+    .letter-container {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .letter-paper {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 200, 220, 0.28);
+      border-radius: 24px;
+      padding: 32px 38px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(255, 105, 180, 0.08);
+      position: relative;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .letter-header {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(255, 200, 220, 0.25);
+      text-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .letter-header-icon {
+      font-size: 26px;
+    }
+    .letter-header-heart {
+      font-size: 22px;
+      animation: miniBeat 1.4s infinite ease-in-out;
+    }
+
+    .letter-body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #fff2f8;
+      min-height: 170px;
+      white-space: pre-wrap;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: #ff5388;
+      vertical-align: middle;
+      margin-left: 3px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Birthday-day banner (replaces the countdown on 10/11) */
+    .birthday-today-banner {
+      display: none;
+      margin: 14px 0 18px;
+      padding: 20px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255, 42, 112, 0.22), rgba(255, 215, 0, 0.14));
+      border: 1px solid rgba(255, 183, 208, 0.55);
+      box-shadow: 0 0 26px rgba(255, 42, 112, 0.35);
+      animation: btGlow 2.4s ease-in-out infinite;
+    }
+    .birthday-today-banner .bt-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 34px;
+      font-weight: 700;
+      color: #ffe066;
+      text-shadow: 0 0 12px rgba(255, 200, 0, 0.7);
+      margin-bottom: 8px;
+    }
+    .birthday-today-banner .bt-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #ffe6f0;
+    }
+    @keyframes btGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 42, 112, 0.3); }
+      50% { box-shadow: 0 0 36px rgba(255, 42, 112, 0.6); }
+    }
+
+    /* REFINED SIGNATURE: Large prominent "Mãi yêu em" and delicate cute "💖 Anh Huân 💖" */
+    .letter-signature-container {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      gap: 16px;
+    }
+    .sig-valediction {
+      font-family: 'Dancing Script', cursive;
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffb8d0;
+      letter-spacing: 1px;
+      text-shadow: 0 0 14px rgba(255, 105, 180, 0.8), 0 0 25px rgba(255, 42, 112, 0.5);
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    .sig-heart-seal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 42, 112, 0.20);
+      border: 1px solid rgba(255, 105, 180, 0.5);
+      padding: 5px 16px;
+      border-radius: 25px;
+      box-shadow: 0 4px 18px rgba(255, 42, 112, 0.35);
+      backdrop-filter: blur(10px);
+    }
+    .sig-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 105, 180, 0.9), 0 0 20px rgba(255, 42, 112, 0.7);
+      letter-spacing: 1px;
+    }
+    .sig-heart-icon {
+      font-size: 15px;
+      animation: miniBeat 1.4s infinite ease-in-out;
+      display: inline-block;
+    }
+
+    /* ================= VIEW 4: ALBUM KỶ NIỆM (POLAROID) ================= */
+    .memories-container {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .memories-header {
+      margin-bottom: 16px;
+      text-align: center;
+      padding: 0 10px;
+    }
+    .memories-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 38px;
+      color: #ffe6f0;
+      text-shadow: 0 0 16px #ff2a70, 0 0 30px rgba(255, 42, 112, 0.6);
+      line-height: 1.35;
+      margin: 0 0 6px 0;
+      word-break: break-word;
+    }
+    .memories-subtitle {
+      font-size: 13.5px;
+      color: rgba(255, 220, 235, 0.9);
+      font-style: italic;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-top: 16px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 6px;
+    }
+
+    .polaroid-card {
+      background: #ffffff;
+      padding: 10px 10px 14px 10px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 16px rgba(255, 105, 180, 0.22);
+      transform: rotate(var(--rot, 0deg));
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s ease;
+      cursor: pointer;
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    .polaroid-card:hover {
+      transform: scale(1.04) rotate(0deg) !important;
+      z-index: 10;
+      box-shadow: 0 16px 36px rgba(255, 83, 136, 0.55);
+    }
+
+    .tape-strip {
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 18px;
+      background: rgba(255, 240, 200, 0.85);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      z-index: 2;
+      border-radius: 2px;
+    }
+
+    .polaroid-img-box {
+      width: 100%;
+      height: 180px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #1a0f25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .polaroid-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .polaroid-card:hover .polaroid-img-box img {
+      transform: scale(1.06);
+    }
+
+    .polaroid-caption {
+      font-family: 'Dancing Script', cursive;
+      font-size: 18px;
+      color: #ff2a70;
+      margin-top: 10px;
+      text-align: center;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .polaroid-date {
+      font-size: 11.5px;
+      color: #555555;
+      text-align: center;
+      margin-top: 4px;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .photo-upload-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= VIEW 5: ĐẾM NGÀY YÊU & SINH NHẬT ================= */
+    .counter-container {
+      width: 100%;
+      max-width: 620px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 200, 220, 0.25);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 83, 136, 0.2);
+    }
+
+    .counter-header {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #ffe6f0;
+      text-shadow: 0 0 16px #ff2a70;
+      margin-bottom: 5px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .countdown-box {
+      background: rgba(20, 10, 30, 0.65);
+      border: 1px solid rgba(255, 83, 136, 0.35);
+      border-radius: 16px;
+      padding: 14px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .countdown-val {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffd700;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.65);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .countdown-lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+    }
+
+    .love-days-box {
+      margin-top: 15px;
+      padding: 14px;
+      background: rgba(255, 83, 136, 0.12);
+      border: 1px dashed rgba(255, 83, 136, 0.45);
+      border-radius: 16px;
+    }
+    .love-days-count {
+      font-size: 26px;
+      font-weight: 700;
+      color: #ff5388;
+      text-shadow: 0 0 12px rgba(255, 83, 136, 0.65);
+    }
+    .love-days-text {
+      font-size: 13.5px;
+      color: #ffe6f0;
+      margin-top: 6px;
+      line-height: 1.6;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    /* ================= BOTTOM NAVIGATION ISLAND ================= */
+    .bottom-nav-container {
+      padding: 18px 16px;
+      display: flex;
+      justify-content: center;
+      pointer-events: auto;
+      z-index: 30;
+    }
+
+    .nav-island {
+      background: rgba(18, 9, 28, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65), 0 0 20px rgba(255, 83, 136, 0.25);
+      max-width: 95vw;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-island::-webkit-scrollbar { display: none; }
+
+    .nav-tab {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.72);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .nav-tab:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .nav-tab.active {
+      color: #fff;
+      background: linear-gradient(135deg, #ff2a70, #ff758c);
+      box-shadow: 0 4px 20px rgba(255, 42, 112, 0.55);
+    }
+    .nav-tab .tab-icon {
+      font-size: 16px;
+    }
+
+    /* ================= BOTTOM BALANCED WIDGETS (MUSIC & FIREWORKS) ================= */
+    .music-widget {
+      position: fixed;
+      bottom: 25px;
+      left: 24px;
+      z-index: 35;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(18, 9, 28, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px;
+      padding: 6px 14px 6px 8px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .music-widget:hover {
+      background: rgba(35, 15, 45, 0.92);
+      border-color: rgba(255, 83, 136, 0.45);
+    }
+
+    .vinyl-disc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #333 30%, #111 60%, #000 100%);
+      border: 2px solid #ff5388;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(255, 83, 136, 0.5);
+      animation: spinDisc 4s linear infinite;
+      animation-play-state: paused;
+    }
+    .vinyl-disc.playing {
+      animation-play-state: running;
+    }
+    .disc-center {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffd700;
+    }
+    @keyframes spinDisc {
+      100% { transform: rotate(360deg); }
+    }
+
+    .music-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .music-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .music-status {
+      font-size: 10px;
+      color: #ff85ad;
+    }
+
+    /* Bottom-Right Balanced Fireworks Button (Bật/Tắt bắn liên tục) */
+    .firework-widget {
+      position: fixed;
+      bottom: 25px;
+      right: 24px;
+      z-index: 35;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(18, 9, 28, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px;
+      padding: 10px 18px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+      transition: all 0.25s ease;
+      user-select: none;
+    }
+    .firework-widget:hover {
+      background: rgba(35, 15, 45, 0.92);
+      border-color: rgba(255, 83, 136, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 83, 136, 0.4);
+    }
+    .firework-widget:active {
+      transform: translateY(0);
+    }
+    .firework-widget.active {
+      background: linear-gradient(135deg, rgba(255, 42, 112, 0.45), rgba(255, 105, 180, 0.35));
+      border-color: rgba(255, 180, 210, 0.95);
+      box-shadow: 0 0 25px rgba(255, 42, 112, 0.8), inset 0 0 14px rgba(255, 105, 180, 0.5);
+      animation: fireworkGlowPulse 1.4s infinite ease-in-out;
+    }
+    @keyframes fireworkGlowPulse {
+      0%, 100% { box-shadow: 0 0 18px rgba(255, 42, 112, 0.6); }
+      50% { box-shadow: 0 0 32px rgba(255, 83, 136, 0.95), 0 0 14px #ffd700; }
+    }
+    .firework-icon {
+      font-size: 18px;
+      animation: miniBeat 1.4s infinite ease-in-out;
+    }
+
+    /* ================= OPENING SURPRISE MODAL ================= */
+    .surprise-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #1e092b 0%, #07030e 100%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+      cursor: pointer;
+    }
+
+    .surprise-modal.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .gift-box-wrapper {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 25px;
+      animation: giftBounce 2s ease-in-out infinite;
+    }
+
+    .gift-box {
+      position: absolute;
+      bottom: 0;
+      width: 140px;
+      height: 110px;
+      background: linear-gradient(135deg, #ff2a70, #e91e63);
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(255, 42, 112, 0.5);
+      left: 10px;
+    }
+
+    .gift-ribbon-v {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 100%;
+      background: linear-gradient(to right, #ffd700, #fff275, #ffd700);
+    }
+
+    .gift-ribbon-h {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 24px;
+      background: linear-gradient(to bottom, #ffd700, #fff275, #ffd700);
+    }
+
+    .gift-lid {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 160px;
+      height: 35px;
+      background: linear-gradient(135deg, #ff4081, #f50057);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .gift-bow {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 30px;
+      z-index: 3;
+    }
+    .gift-bow::before, .gift-bow::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border: 5px solid #ffd700;
+      border-radius: 50% 50% 0 50%;
+    }
+    .gift-bow::before {
+      left: 2px;
+      transform: rotate(-30deg);
+    }
+    .gift-bow::after {
+      right: 2px;
+      transform: rotate(120deg);
+    }
+
+    @keyframes giftBounce {
+      0%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-14px); }
+      60% { transform: translateY(-4px); }
+    }
+
+    .surprise-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 44px;
+      color: #ffe6f0;
+      text-shadow: 0 0 20px #ff2a70;
+      margin-bottom: 8px;
+    }
+
+    .surprise-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 24px;
+    }
+
+    .surprise-btn {
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #331500;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 34px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      animation: pulseBtn 1.8s infinite;
+    }
+    @keyframes pulseBtn {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* ================= SETTINGS / CUSTOMIZE MODAL ================= */
+    .settings-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 120;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .settings-modal.show {
+      display: flex;
+    }
+
+    .settings-card {
+      background: #140d20;
+      border: 1px solid rgba(255, 83, 136, 0.45);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 520px;
+      padding: 26px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.85);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .settings-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 38px;
+      color: #ffd700;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 14px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #ffb8d0;
+      margin-bottom: 5px;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.25s;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: #ff5388;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .form-textarea {
+      min-height: 95px;
+      resize: vertical;
+    }
+    .settings-btns {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    /* Lightbox Modal for Photos */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 150;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .lightbox-modal.show {
+      display: flex;
+    }
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 75vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(255, 83, 136, 0.45);
+      border: 3px solid #fff;
+    }
+    .lightbox-caption {
+      font-family: 'Dancing Script', cursive;
+      font-size: 26px;
+      color: #fff;
+      margin-top: 15px;
+      text-shadow: 0 0 12px #ff2a70;
+    }
+
+    /* ================= RESPONSIVE ADJUSTMENTS ================= */
+    @media (max-width: 768px) {
+      .top-bar {
+        padding: 12px 16px;
+      }
+      .brand-title {
+        font-size: 22px;
+        gap: 6px;
+      }
+      .brand-title .heart-icon {
+        font-size: 18px;
+      }
+      .heart-center-box {
+        margin-top: -85px;
+      }
+      .heart-main-name {
+        font-size: 46px;
+        margin: 0 0 10px 0;
+      }
+      .heart-subtitle {
+        font-size: 11px;
+        letter-spacing: 4px;
+        margin-bottom: 14px;
+      }
+      .floating-quote-box {
+        bottom: 80px;
+        padding: 8px 18px;
+        width: fit-content;
+        max-width: 90%;
+      }
+      .quote-text {
+        font-size: 12.5px;
+      }
+      .cake-title {
+        font-size: 34px;
+      }
+      .cake-subtitle {
+        font-size: 12.5px;
+      }
+      .cake-wish-card {
+        padding: 12px 18px;
+      }
+      .cake-wish-card h3 {
+        font-size: 26px;
+      }
+      .cake-wish-card p {
+        font-size: 12.5px;
+      }
+      .letter-paper {
+        padding: 24px 20px;
+      }
+      .letter-header {
+        font-size: 26px;
+      }
+      .letter-body {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+      .sig-valediction {
+        font-size: 34px;
+        margin-bottom: 2px;
+      }
+      .sig-name {
+        font-size: 18px;
+      }
+      .memories-title {
+        font-size: 28px;
+      }
+      .memories-subtitle {
+        font-size: 11.5px;
+      }
+      .polaroid-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+      }
+      .polaroid-img-box {
+        height: 140px;
+      }
+      .polaroid-caption {
+        font-size: 15px;
+      }
+      .countdown-val {
+        font-size: 24px;
+      }
+      .counter-container {
+        padding: 20px 15px;
+      }
+      .music-widget {
+        bottom: 78px;
+        left: 12px;
+        padding: 4px 10px 4px 6px;
+      }
+      .firework-widget {
+        bottom: 78px;
+        right: 12px;
+        padding: 8px 12px;
+        font-size: 11px;
+      }
+      .nav-island {
+        padding: 4px 6px;
+        gap: 4px;
+      }
+      .nav-tab {
+        padding: 8px 12px;
+        font-size: 11px;
+      }
+      .nav-tab .tab-icon {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UNIFIED HIGH-PERFORMANCE CANVASES -->
+  <canvas id="skyCanvas"></canvas>
+  <canvas id="mainCanvas"></canvas>
+
+  <!-- Main User Interface Layer -->
+  <div class="app-container">
+    <!-- Top Header: Symmetrical "💖 Thu Uyên" & "Thu Uyên 💖" -->
+    <header class="top-bar">
+      <div class="brand-title brand-left" id="headerLeftBrand">
+        <span class="heart-icon" id="heartEasterEggLeft" title="Chạm vào trái tim bí mật ✨">💖</span>
+        <span class="brand-name-clickable" id="brandNameLeft" title="Chạm để ngắm dải pháo hoa rực rỡ ✨">Thu Uyên</span>
+      </div>
+      <div class="brand-title brand-right" id="headerRightBrand">
+        <span class="brand-name-clickable" id="brandNameRight" title="Chạm để ngắm dải pháo hoa rực rỡ ✨">Thu Uyên</span>
+        <span class="heart-icon" id="heartEasterEggRight" title="Chạm vào trái tim bí mật ✨">💖</span>
+      </div>
+    </header>
+
+    <!-- Central Interactive View Panels -->
+    <main class="view-content">
+
+      <!-- PANEL 1: TRÁI TIM YÊU THƯƠNG (DEFAULT) -->
+      <section class="view-panel active" id="panelHeart">
+        <div class="heart-center-box">
+          <div class="heart-subtitle">HAPPY BIRTHDAY</div>
+          <div class="heart-main-name" id="displayHeartName" title="Chạm để ngắm dải pháo hoa rực rỡ ✨">Thu Uyên</div>
+          <div class="heart-date-badge">
+            <span>✨</span>
+            <span id="displayHeartDate">10/11/2007</span>
+            <span>✨</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 2: BÁNH KEM & THỔI NẾN -->
+      <section class="view-panel" id="panelCake">
+        <div class="cake-container">
+          <h2 class="cake-title">Chúc Mừng Sinh Nhật Thu Uyên!</h2>
+          <p class="cake-subtitle">Hãy nhắm mắt lại, ước một điều ước thật ngọt ngào rồi bấm thổi nến nhé công chúa của anh! ✨</p>
+          
+          <div class="interactive-cake-stage" id="cakeStage" title="Bấm vào để thổi nến">
+            <div class="cake-plate"></div>
+            <div class="cake-bottom-tier"></div>
+            <div class="cake-top-tier">
+              <div class="cake-frosting-drips"></div>
+            </div>
+            <div class="candle">
+              <div class="flame" id="candleFlame"></div>
+              <div class="smoke" id="candleSmoke"></div>
+            </div>
+          </div>
+
+          <div class="cake-action-btns">
+            <button class="btn-glow" id="btnBlowCandle">
+              <span>🕯️</span> Thổi Nến Ước Nguyện
+            </button>
+            <button class="btn-secondary" id="btnRelightCandle">
+              <span>🔥</span> Thắp Lại Nến
+            </button>
+          </div>
+
+          <div class="cake-wish-card" id="cakeWishCard">
+            <h3>Điều ước đã bay tới các vì sao! 🌟</h3>
+            <p id="cakeWishMessage">Chúc Thu Uyên tuổi mới luôn rực rỡ, ngập tràn tiếng cười và niềm vui. Mọi ước mơ của em đều sẽ thành hiện thực, và hãy nhớ luôn có anh ở đây đồng hành và yêu thương em! ❤️</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 3: BỨC THƯ TÌNH CẢM ĐỘNG -->
+      <section class="view-panel" id="panelLetter">
+        <div class="letter-container">
+          <div class="letter-paper" title="Chạm vào thư để đọc lại từ đầu">
+            <div class="letter-header">
+              <span class="letter-header-icon">💌</span>
+              <span>Bức Thư Gửi Thu Uyên</span>
+              <span class="letter-header-heart">❤️</span>
+            </div>
+            <div class="letter-body">
+              <span id="letterTypedContent"></span><span class="typing-cursor"></span>
+            </div>
+            <!-- REFINED SIGNATURE: Spacious "Mãi yêu em" and lovely "💖 Anh Huân 💖" -->
+            <div class="letter-signature-container">
+              <div class="sig-valediction">Mãi yêu em</div>
+              <div class="sig-heart-seal">
+                <span class="sig-heart-icon">💖</span>
+                <span class="sig-name" id="displaySenderName">Anh Huân</span>
+                <span class="sig-heart-icon">💖</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 4: GÓC KỶ NIỆM (ALBUM POLAROID) -->
+      <section class="view-panel" id="panelMemories">
+        <div class="memories-container">
+          <div class="memories-header">
+            <h2 class="memories-title">Khoảnh Khắc Yêu Thương Của Đôi Mình 💕</h2>
+            <p class="memories-subtitle">Mỗi bức ảnh là một mảnh ghép thanh xuân ngọt ngào anh dành trọn cho em ✨</p>
+          </div>
+          <div class="polaroid-grid" id="polaroidGrid">
+            <!-- 9 Polaroid Photo Cards Loaded Dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 5: BỘ ĐẾM THỜI GIAN & ĐẾM NGƯỢC -->
+      <section class="view-panel" id="panelCounter">
+        <div class="counter-container">
+          <h2 class="counter-header">Hành Trình Yêu Thương</h2>
+          <p id="countdownSubtitle" style="font-size: 13px; color: #ffe6f0;">Đếm ngược tới ngày sinh nhật tuyệt vời nhất của Thu Uyên:</p>
+
+          <div class="birthday-today-banner" id="birthdayTodayBanner">
+            <div class="bt-title">🎂 Hôm Nay Là Sinh Nhật Em! 🎉</div>
+            <div class="bt-text">Chúc mừng sinh nhật Thu Uyên – công chúa nhỏ của anh.<br>Hôm nay cả thế giới đều thuộc về em 💖</div>
+          </div>
+
+          <div class="countdown-grid" id="countdownGrid">
+            <div class="countdown-box">
+              <span class="countdown-val" id="cntDays">00</span>
+              <span class="countdown-lbl">Ngày</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-val" id="cntHours">00</span>
+              <span class="countdown-lbl">Giờ</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-val" id="cntMins">00</span>
+              <span class="countdown-lbl">Phút</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-val" id="cntSecs">00</span>
+              <span class="countdown-lbl">Giây</span>
+            </div>
+          </div>
+
+          <div class="love-days-box">
+            <div class="love-days-count" id="loveDaysNumber">69 Ngày Bên Nhau 💕</div>
+            <div class="love-days-text">
+              Kể từ ngày 30/08/2026, từng giây phút trôi qua trái tim anh<br>
+              đều trọn vẹn hướng về Thu Uyên 💕
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Floating Love Quote on Heart View -->
+    <div class="floating-quote-box" id="quoteBox" title="Chạm để đổi lời chúc ngọt ngào">
+      <div class="quote-text" id="quoteText">"Gặp được em là điều may mắn nhất, yêu em là quyết định đúng đắn nhất cuộc đời anh."</div>
+      <!-- Biểu tượng chuột/tay ấn 1 2 lần nhấp nháy rồi biến mất (xuất hiện sau 15s, không có chữ) -->
+      <div class="quote-mouse-hint" id="quoteTapHint">
+        <div class="mouse-icon-wrap">
+          <span class="mouse-pointer-icon">👆</span>
+          <span class="mouse-click-ring"></span>
+          <span class="mouse-click-ring ring-2"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Floating Island Navigation Bar -->
+    <footer class="bottom-nav-container">
+      <nav class="nav-island">
+        <button class="nav-tab active" data-target="panelHeart">
+          <span class="tab-icon">💖</span>
+          <span>Trái Tim</span>
+        </button>
+        <button class="nav-tab" data-target="panelCake">
+          <span class="tab-icon">🎂</span>
+          <span>Thổi Nến</span>
+        </button>
+        <button class="nav-tab" data-target="panelLetter">
+          <span class="tab-icon">💌</span>
+          <span>Thư Tình</span>
+        </button>
+        <button class="nav-tab" data-target="panelMemories">
+          <span class="tab-icon">📸</span>
+          <span>Kỷ Niệm</span>
+        </button>
+        <button class="nav-tab" data-target="panelCounter">
+          <span class="tab-icon">⏳</span>
+          <span>Đếm Ngày</span>
+        </button>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- Music Floating Widget (Bottom-Left) -->
+  <div class="music-widget" id="musicWidget" title="Bật/Tắt Nhạc Lãng Mạn">
+    <div class="vinyl-disc" id="vinylDisc">
+      <div class="disc-center"></div>
+    </div>
+    <div class="music-info">
+      <span class="music-title">Happy Birthday Uyên</span>
+      <span class="music-status" id="musicStatus">Chạm để phát nhạc 🎵</span>
+    </div>
+  </div>
+
+  <!-- Fireworks Floating Widget (Bottom-Right, Bật/Tắt bắn liên tục) -->
+  <button class="firework-widget" id="btnFirework" title="Bắn Pháo Hoa Liên Tục">
+    <span class="firework-icon">🎆</span>
+    <span id="fireworkBtnText">Bắn Pháo Hoa</span>
+  </button>
+
+  <!-- Hidden Audio Elements - Default volume 70% -->
+  <audio id="bgAudio" loop preload="auto">
+    <source src="music.mp3" type="audio/mp3">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_db6591201e.mp3?filename=romantic-piano-112199.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- OPENING SURPRISE MODAL -->
+  <div class="surprise-modal" id="surpriseModal">
+    <div class="gift-box-wrapper">
+      <div class="gift-bow"></div>
+      <div class="gift-lid"></div>
+      <div class="gift-box">
+        <div class="gift-ribbon-v"></div>
+        <div class="gift-ribbon-h"></div>
+      </div>
+    </div>
+    <h1 class="surprise-title">Gửi Thu Uyên Của Anh ✨</h1>
+    <p class="surprise-desc">Anh có một món quà bí mật muốn dành riêng cho em trong ngày đặc biệt này...</p>
+    <button class="surprise-btn" id="btnOpenGift">
+      <span>🎁</span> Chạm để mở món quà bí mật
+    </button>
+  </div>
+
+  <!-- SETTINGS / CUSTOMIZE MODAL (Accessible via double-click on title or 'S' key) -->
+  <div class="settings-modal" id="settingsModal">
+    <div class="settings-card">
+      <h2 class="settings-title">Tùy Chỉnh Thông Tin</h2>
+      <div class="form-group">
+        <label>Tên Người Yêu:</label>
+        <input type="text" class="form-input" id="cfgName" value="Thu Uyên">
+      </div>
+      <div class="form-group">
+        <label>Tên Người Gửi (Chữ ký thư):</label>
+        <input type="text" class="form-input" id="cfgSender" value="Anh Huân">
+      </div>
+      <div class="form-group">
+        <label>Ngày Sinh (DD/MM/YYYY):</label>
+        <input type="text" class="form-input" id="cfgDate" value="10/11/2007">
+      </div>
+      <div class="form-group">
+        <label>Ngày Bắt Đầu Yêu (YYYY-MM-DD):</label>
+        <input type="date" class="form-input" id="cfgLoveDate" value="2026-08-30">
+      </div>
+      <div class="form-group">
+        <label>Nội Dung Bức Thư Tình:</label>
+        <textarea class="form-textarea" id="cfgLetter"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Link Nhạc Riêng (hoặc đặt file music.mp3 vào cùng thư mục):</label>
+        <input type="text" class="form-input" id="cfgMusicUrl" placeholder="https://example.com/song.mp3">
+      </div>
+      <div class="settings-btns">
+        <button class="btn-secondary" id="btnCloseSettings">Đóng</button>
+        <button class="btn-glow" id="btnSaveSettings">Lưu Thông Tin</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX PHOTO MODAL -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Kỷ niệm">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <!-- HIDDEN FILE INPUT FOR PHOTO UPLOAD -->
+  <input type="file" id="photoFileInput" accept="image/*" multiple style="display: none;">
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    /* ================= 1. CONFIG & DATA ================= */
+    const DEFAULT_CONFIG = {
+      name: 'Thu Uyên',
+      senderName: 'Anh Huân',
+      birthday: '10/11/2007',
+      loveStartDate: '2026-08-30',
+      letterText: `Gửi Thu Uyên - cô gái tuyệt vời nhất của anh,\n\nHôm nay là một ngày vô cùng đặc biệt — ngày mà thiên thần nhỏ của anh xuất hiện trên thế giới này.\n\nCảm ơn em vì đã đến bên anh, mang theo nụ cười rạng rỡ và sự ấm áp làm tan chảy mọi bộn bề lo toan. Từng khoảnh khắc ở bên em đều là những giây phút ngọt ngào và bình yên nhất.\n\nBước sang tuổi mới, anh chúc Uyên luôn ngập tràn niềm vui, luôn xinh đẹp, học tập và mọi dự định đều thành công rực rỡ. Hãy nhớ rằng: dù thế nào đi nữa, luôn có anh ở phía sau yêu thương, che chở và đồng hành cùng em.\n\nHappy Birthday My Princess! 💖`,
+      musicUrl: '',
+      quotes: [
+        "Gặp được em là điều may mắn nhất, yêu em là quyết định đúng đắn nhất cuộc đời anh. 💕",
+        "Nụ cười của Thu Uyên chính là ánh mặt trời sưởi ấm cả thế giới của anh. ☀️",
+        "Chúc cô gái của anh một đời an yên, trọn vẹn hạnh phúc và luôn có anh bên cạnh. 🌸",
+        "Tuổi mới thật rực rỡ nhé công chúa nhỏ! Yêu em nhiều hơn ngày hôm qua. ✨",
+        "Dù trái đất có 8 tỷ người, trong mắt anh chỉ có duy nhất một mình em. 💖",
+        "Chỉ cần nhìn thấy nụ cười của em là mọi muộn phiền trong anh đều tan biến. 🌷",
+        "Cảm ơn em vì đã là mảnh ghép hoàn hảo nhất trong cuộc đời anh. 🌟"
+      ],
+      photos: [
+        {
+          url: 'anh/01_anh_mat_rung_dong.jpg',
+          fallbackUrl: 'ảnh/Ánh mắt rung động.jpg',
+          caption: 'Ánh Mắt Rung Động ✨',
+          date: 'Khoảnh khắc đầu tiên chạm vào ánh mắt em, cả thế giới như ngừng lại'
+        },
+        {
+          url: 'anh/02_di_khap_the_gian.jpg',
+          fallbackUrl: 'ảnh/Đi khắp thế gian cùng em.jpg',
+          caption: 'Đi Khắp Thế Gian Cùng Em 🌍',
+          date: 'Chỉ cần được đi cùng em, mọi nẻo đường đều hóa thiên đường'
+        },
+        {
+          url: 'anh/03_buoi_chieu_am_ap.jpg',
+          fallbackUrl: 'ảnh/Những buổi chiều ấm áp.jpg',
+          caption: 'Những Buổi Chiều Bình Yên ☕',
+          date: 'Ngồi bên em ngắm hoàng hôn buông, thấy lòng mình ấm áp lạ thường'
+        },
+        {
+          url: 'anh/04_trung_thu_voi_vo.jpg',
+          fallbackUrl: 'ảnh/Trung thu với vợ.jpg',
+          caption: 'Mùa Trăng Yêu Thương 🌕',
+          date: 'Trung thu ngọt ngào nhất là Trung thu có em ở bên cạnh'
+        },
+        {
+          url: 'anh/05_netflix_chill.jpg',
+          fallbackUrl: 'ảnh/Netflix & chill.jpg',
+          caption: 'Phút Giây Hạnh Phúc 🎬',
+          date: 'Cùng em xem những bộ phim yêu thích, tựa vai nhau an yên'
+        },
+        {
+          url: 'anh/06_tim_xe_30p.jpg',
+          fallbackUrl: 'ảnh/Kỷ niệm tìm xe 30p.jpg',
+          caption: 'Kỷ Niệm Tìm Xe 30 Phút 🛵',
+          date: 'Dù lòng vòng nửa tiếng tìm xe nhưng có em cùng cười là vui nhất'
+        },
+        {
+          url: 'anh/07_vo_ai_ma_xinh_the.jpg',
+          fallbackUrl: 'ảnh/Vợ ai mà xinh thế .jpg',
+          caption: 'Vợ Ai Mà Xinh Thế? 💖',
+          date: 'Vợ của anh chứ ai, cô công chúa xinh đẹp nhất thế gian'
+        },
+        {
+          url: 'anh/08_tinh_yeu_dieu_ky.jpg',
+          fallbackUrl: 'ảnh/dùng từ theo ý bạn (.jpg',
+          caption: 'Tình Yêu Diệu Kỳ 💕',
+          date: 'Gặp được em là điều may mắn và tuyệt vời nhất cuộc đời anh'
+        },
+        {
+          url: 'anh/09_nu_cuoi_toa_nang.jpg',
+          fallbackUrl: 'ảnh/Tự đặt tên.jpg',
+          caption: 'Hẹn Hò Bên Phố 🍽️',
+          date: 'Những bữa ăn giản dị bên em luôn là khoảnh khắc anh trân quý nhất'
+        }
+      ]
+    };
+
+    let appConfig = DEFAULT_CONFIG;
+    try {
+      const saved = JSON.parse(localStorage.getItem('SN_UYEN_CONFIG'));
+      if (saved) {
+        // Upgrade legacy 2023 date or mock svg photos if present
+        if (!saved.loveStartDate || saved.loveStartDate === '2023-11-10') {
+          saved.loveStartDate = '2026-08-30';
+        }
+        if (!saved.photos || !saved.photos.length || (saved.photos[0].url && saved.photos[0].url.startsWith('data:image/svg'))) {
+          saved.photos = DEFAULT_CONFIG.photos;
+        }
+        if (!saved.senderName || saved.senderName === 'Huân') {
+          saved.senderName = 'Anh Huân';
+        }
+        appConfig = Object.assign({}, DEFAULT_CONFIG, saved);
+        localStorage.setItem('SN_UYEN_CONFIG', JSON.stringify(appConfig));
+      } else {
+        localStorage.setItem('SN_UYEN_CONFIG', JSON.stringify(DEFAULT_CONFIG));
+      }
+    } catch (e) {
+      appConfig = DEFAULT_CONFIG;
+    }
+
+    /* ================= 2. AUDIO SYNTHESIZER (70% VOLUME) ================= */
+    class RomanticMusicSynthesizer {
+      constructor() {
+        this.ctx = null;
+        this.isPlaying = false;
+        this.timer = null;
+        this.step = 0;
+        this.notes = [
+          261.63, 261.63, 293.66, 261.63, 349.23, 329.63,
+          261.63, 261.63, 293.66, 261.63, 392.00, 349.23,
+          261.63, 261.63, 523.25, 440.00, 349.23, 329.63, 293.66,
+          466.16, 466.16, 440.00, 349.23, 392.00, 349.23
+        ];
+        this.durations = [
+          400, 400, 800, 800, 800, 1400,
+          400, 400, 800, 800, 800, 1400,
+          400, 400, 800, 800, 800, 800, 1400,
+          400, 400, 800, 800, 800, 1600
+        ];
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioContext();
+        }
+        if (this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      playTone(freq, duration) {
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+
+        gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration / 1000);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + duration / 1000);
+      }
+
+      playNextNote() {
+        if (!this.isPlaying) return;
+        const freq = this.notes[this.step];
+        const dur = this.durations[this.step];
+        this.playTone(freq, dur);
+
+        this.step = (this.step + 1) % this.notes.length;
+        this.timer = setTimeout(() => this.playNextNote(), dur);
+      }
+
+      start() {
+        this.init();
+        if (this.isPlaying) return;
+        this.isPlaying = true;
+        this.step = 0;
+        this.playNextNote();
+      }
+
+      stop() {
+        this.isPlaying = false;
+        if (this.timer) clearTimeout(this.timer);
+      }
+
+      playSparkle() {
+        this.init();
+        if (!this.ctx) return;
+        const freqs = [523.25, 659.25, 783.99, 1046.50];
+        freqs.forEach((f, i) => {
+          setTimeout(() => this.playTone(f, 250), i * 65);
+        });
+      }
+
+      playStreamerChime() {
+        this.init();
+        if (!this.ctx) return;
+        // Celestial harp / bell glissando (D5, F#5, A5, D6, F#6, A6)
+        const freqs = [587.33, 739.99, 880.00, 1174.66, 1479.98, 1760.00];
+        freqs.forEach((f, i) => {
+          setTimeout(() => this.playTone(f, 320), i * 70);
+        });
+      }
+
+      playBlowSound() {
+        this.init();
+        if (!this.ctx) return;
+        try {
+          const bufferSize = this.ctx.sampleRate * 0.8;
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = Math.random() * 2 - 1;
+          }
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+          const filter = this.ctx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(400, this.ctx.currentTime);
+          filter.frequency.exponentialRampToValueAtTime(80, this.ctx.currentTime + 0.8);
+
+          const gain = this.ctx.createGain();
+          gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.005, this.ctx.currentTime + 0.8);
+
+          noise.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.ctx.destination);
+          noise.start();
+        } catch(e) {}
+      }
+
+      playFireworkBoom() {
+        this.init();
+        if (!this.ctx) return;
+        try {
+          const bufferSize = this.ctx.sampleRate * 0.45;
+          const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (this.ctx.sampleRate * 0.1));
+          }
+          const noise = this.ctx.createBufferSource();
+          noise.buffer = buffer;
+          const filter = this.ctx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(250, this.ctx.currentTime);
+          const gain = this.ctx.createGain();
+          gain.gain.setValueAtTime(0.14, this.ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.4);
+          noise.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.ctx.destination);
+          noise.start();
+        } catch(e) {}
+      }
+    }
+
+    const synth = new RomanticMusicSynthesizer();
+    const bgAudio = document.getElementById('bgAudio');
+    bgAudio.volume = 0.7;
+
+    let isMusicPlaying = false;
+
+    function toggleMusic(forceState) {
+      const nextState = forceState !== undefined ? forceState : !isMusicPlaying;
+      const vinyl = document.getElementById('vinylDisc');
+      const status = document.getElementById('musicStatus');
+
+      if (nextState) {
+        synth.init();
+        bgAudio.volume = 0.7;
+        const playPromise = bgAudio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            isMusicPlaying = true;
+            vinyl.classList.add('playing');
+            status.textContent = 'Đang phát nhạc 💖';
+          }).catch(() => {
+            synth.start();
+            isMusicPlaying = true;
+            vinyl.classList.add('playing');
+            status.textContent = 'Giai điệu lãng mạn 🔔';
+          });
+        }
+      } else {
+        bgAudio.pause();
+        synth.stop();
+        isMusicPlaying = false;
+        vinyl.classList.remove('playing');
+        status.textContent = 'Đã tạm dừng ⏸️';
+      }
+    }
+
+    document.getElementById('musicWidget').addEventListener('click', () => toggleMusic());
+
+    /* ================= 3. STARRY SKY CANVAS ================= */
+    const skyCanvas = document.getElementById('skyCanvas');
+    const skyCtx = skyCanvas.getContext('2d');
+    let stars = [];
+    let shootingStars = [];
+
+    function initSky() {
+      skyCanvas.width = window.innerWidth;
+      skyCanvas.height = window.innerHeight;
+      stars = [];
+      const count = Math.min(180, Math.floor((skyCanvas.width * skyCanvas.height) / 7000));
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * skyCanvas.width,
+          y: Math.random() * skyCanvas.height,
+          radius: Math.random() * 1.3 + 0.4,
+          alpha: Math.random(),
+          speed: Math.random() * 0.02 + 0.006,
+          twinkle: Math.random() * Math.PI
+        });
+      }
+    }
+
+    function addShootingStar() {
+      shootingStars.push({
+        x: Math.random() * skyCanvas.width * 0.85,
+        y: Math.random() * skyCanvas.height * 0.35,
+        len: Math.random() * 80 + 40,
+        speed: Math.random() * 10 + 12,
+        angle: Math.PI / 4,
+        alpha: 1
+      });
+      setTimeout(addShootingStar, Math.random() * 5000 + 3500);
+    }
+    setTimeout(addShootingStar, 2500);
+
+    function renderSky() {
+      skyCtx.clearRect(0, 0, skyCanvas.width, skyCanvas.height);
+      stars.forEach(s => {
+        s.twinkle += s.speed;
+        const a = 0.3 + 0.7 * Math.abs(Math.sin(s.twinkle));
+        skyCtx.fillStyle = `rgba(255, 255, 255, ${a})`;
+        skyCtx.beginPath();
+        skyCtx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+        skyCtx.fill();
+      });
+
+      for (let i = shootingStars.length - 1; i >= 0; i--) {
+        const ss = shootingStars[i];
+        const tx = ss.x - Math.cos(ss.angle) * ss.len;
+        const ty = ss.y - Math.sin(ss.angle) * ss.len;
+
+        skyCtx.strokeStyle = `rgba(255, 255, 255, ${ss.alpha})`;
+        skyCtx.lineWidth = 2;
+        skyCtx.beginPath();
+        skyCtx.moveTo(ss.x, ss.y);
+        skyCtx.lineTo(tx, ty);
+        skyCtx.stroke();
+
+        ss.x += Math.cos(ss.angle) * ss.speed;
+        ss.y += Math.sin(ss.angle) * ss.speed;
+        ss.alpha -= 0.025;
+        if (ss.alpha <= 0) shootingStars.splice(i, 1);
+      }
+      requestAnimationFrame(renderSky);
+    }
+
+    /* ================= 4. UNIFIED MAIN FOREGROUND CANVAS ================= */
+    const mainCanvas = document.getElementById('mainCanvas');
+    const ctx = mainCanvas.getContext('2d');
+
+    const heartSettings = {
+      particles: {
+        length: 420,
+        duration: 2.0,
+        velocity: 100,
+        effect: -0.75,
+        size: 30
+      }
+    };
+
+    class Point {
+      constructor(x = 0, y = 0) {
+        this.x = x;
+        this.y = y;
+      }
+      clone() { return new Point(this.x, this.y); }
+      length(l) {
+        if (typeof l === 'undefined') return Math.sqrt(this.x * this.x + this.y * this.y);
+        this.normalize();
+        this.x *= l;
+        this.y *= l;
+        return this;
+      }
+      normalize() {
+        const l = this.length();
+        if (l !== 0) { this.x /= l; this.y /= l; }
+        return this;
+      }
+    }
+
+    class Particle {
+      constructor() {
+        this.position = new Point();
+        this.velocity = new Point();
+        this.acceleration = new Point();
+        this.age = 0;
+        this.colorType = 0;
+      }
+      initialize(x, y, dx, dy, colorType = 0) {
+        this.position.x = x;
+        this.position.y = y;
+        this.velocity.x = dx;
+        this.velocity.y = dy;
+        this.acceleration.x = dx * heartSettings.particles.effect;
+        this.acceleration.y = dy * heartSettings.particles.effect;
+        this.age = 0;
+        this.colorType = colorType;
+      }
+      update(dt) {
+        this.position.x += this.velocity.x * dt;
+        this.position.y += this.velocity.y * dt;
+        this.velocity.x += this.acceleration.x * dt;
+        this.velocity.y += this.acceleration.y * dt;
+        this.age += dt;
+      }
+      draw(c, images) {
+        const ease = t => (--t) * t * t + 1;
+        const progress = this.age / heartSettings.particles.duration;
+        const img = images[this.colorType % images.length];
+        const size = img.width * ease(progress);
+        c.globalAlpha = Math.max(0, 1 - progress);
+        c.drawImage(img, this.position.x - size / 2, this.position.y - size / 2, size, size);
+      }
+    }
+
+    class ParticlePool {
+      constructor(len) {
+        this.particles = new Array(len);
+        for (let i = 0; i < len; i++) this.particles[i] = new Particle();
+        this.firstActive = 0;
+        this.firstFree = 0;
+        this.duration = heartSettings.particles.duration;
+      }
+      add(x, y, dx, dy, colorType) {
+        this.particles[this.firstFree].initialize(x, y, dx, dy, colorType);
+        this.firstFree = (this.firstFree + 1) % this.particles.length;
+        if (this.firstActive === this.firstFree) {
+          this.firstActive = (this.firstActive + 1) % this.particles.length;
+        }
+      }
+      update(dt) {
+        if (this.firstActive < this.firstFree) {
+          for (let i = this.firstActive; i < this.firstFree; i++) this.particles[i].update(dt);
+        } else if (this.firstFree < this.firstActive) {
+          for (let i = this.firstActive; i < this.particles.length; i++) this.particles[i].update(dt);
+          for (let i = 0; i < this.firstFree; i++) this.particles[i].update(dt);
+        }
+        while (this.particles[this.firstActive].age >= this.duration && this.firstActive !== this.firstFree) {
+          this.firstActive = (this.firstActive + 1) % this.particles.length;
+        }
+      }
+      draw(c, images) {
+        if (this.firstActive < this.firstFree) {
+          for (let i = this.firstActive; i < this.firstFree; i++) this.particles[i].draw(c, images);
+        } else if (this.firstFree < this.firstActive) {
+          for (let i = this.firstActive; i < this.particles.length; i++) this.particles[i].draw(c, images);
+          for (let i = 0; i < this.firstFree; i++) this.particles[i].draw(c, images);
+        }
+      }
+    }
+
+    function pointOnHeart(t) {
+      return new Point(
+        160 * Math.pow(Math.sin(t), 3),
+        130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+      );
+    }
+
+    function createHeartParticleTextures() {
+      const colors = [
+        ['#ff2a70', '#ff758c'],
+        ['#ff758c', '#ffb8d0'],
+        ['#ffd700', '#fff275'],
+        ['#ffffff', '#ffc2d4']
+      ];
+
+      return colors.map(palette => {
+        const c = document.createElement('canvas');
+        const cctx = c.getContext('2d');
+        c.width = heartSettings.particles.size;
+        c.height = heartSettings.particles.size;
+
+        function to(t) {
+          const pt = pointOnHeart(t);
+          pt.x = c.width / 2 + pt.x * c.width / 350;
+          pt.y = c.height / 2 - pt.y * c.height / 350;
+          return pt;
+        }
+
+        cctx.beginPath();
+        let t = -Math.PI;
+        let pt = to(t);
+        cctx.moveTo(pt.x, pt.y);
+        while (t < Math.PI) {
+          t += 0.03;
+          pt = to(t);
+          cctx.lineTo(pt.x, pt.y);
+        }
+        cctx.closePath();
+
+        const grad = cctx.createLinearGradient(0, 0, c.width, c.height);
+        grad.addColorStop(0, palette[0]);
+        grad.addColorStop(1, palette[1]);
+        cctx.fillStyle = grad;
+        cctx.fill();
+
+        const img = new Image();
+        img.src = c.toDataURL();
+        return img;
+      });
+    }
+
+    const particleImages = createHeartParticleTextures();
+    const particlePool = new ParticlePool(heartSettings.particles.length);
+    let lastTime = 0;
+
+    let fireworkRockets = [];
+    let fireworkSparks = [];
+    let fireworkStreamers = [];
+    const MAX_SPARKS = 1100; // hard cap to keep every device smooth
+
+    /* Pre-rendered glow sprites (much cheaper than shadowBlur) */
+    const glowSpriteCache = {};
+    function getGlowSprite(color) {
+      if (glowSpriteCache[color]) return glowSpriteCache[color];
+      const s = document.createElement('canvas');
+      s.width = s.height = 64;
+      const g = s.getContext('2d');
+      const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+      grad.addColorStop(0, '#ffffff');
+      grad.addColorStop(0.18, color);
+      grad.addColorStop(0.45, color + '55');
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      g.fillStyle = grad;
+      g.fillRect(0, 0, 64, 64);
+      glowSpriteCache[color] = s;
+      return s;
+    }
+
+    class FireworkSpark {
+      constructor(x, y, vx, vy, color, o = {}) {
+        this.x = x; this.y = y;
+        this.vx = vx; this.vy = vy;
+        this.color = color;
+        this.friction = o.friction || 0.965;
+        this.gravity = o.gravity !== undefined ? o.gravity : 0.07;
+        this.alpha = 1;
+        this.decay = o.decay || (Math.random() * 0.01 + 0.011);
+        this.size = o.size || (Math.random() * 1.2 + 1.6);
+        this.twinkle = !!o.twinkle;
+        this.sprite = getGlowSprite(color);
+      }
+      update() {
+        this.vx *= this.friction;
+        this.vy *= this.friction;
+        this.vy += this.gravity;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= this.decay;
+      }
+      draw(c) {
+        if (this.alpha <= 0) return;
+        let a = this.alpha;
+        if (this.twinkle && Math.random() < 0.35) a *= 0.25;
+        c.globalAlpha = a;
+        const d = this.size * 7;
+        c.drawImage(this.sprite, this.x - d / 2, this.y - d / 2, d, d);
+      }
+    }
+
+    function pushSpark(x, y, vx, vy, color, o) {
+      if (fireworkSparks.length < MAX_SPARKS) fireworkSparks.push(new FireworkSpark(x, y, vx, vy, color, o));
+    }
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    /* Burst shapes: peony (sphere), ring, heart, willow (golden weeping) */
+    function explodeFirework(x, y, colors, type = 'peony', scale = 1) {
+      synth.playFireworkBoom();
+      if (type === 'heart') {
+        const n = 64;
+        for (let i = 0; i < n; i++) {
+          const t = (i / n) * Math.PI * 2;
+          const hx = 16 * Math.pow(Math.sin(t), 3);
+          const hy = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+          const k = 0.36 * scale;
+          pushSpark(x, y, hx * k, -hy * k, colors[i % colors.length], { friction: 0.94, gravity: 0.025, decay: 0.012, size: 2 });
+        }
+        for (let i = 0; i < 18; i++) {
+          const a = Math.random() * Math.PI * 2, sp = Math.random() * 1.5;
+          pushSpark(x, y, Math.cos(a) * sp, Math.sin(a) * sp, '#ffffff', { gravity: 0.02, decay: 0.02, size: 1.3, twinkle: true });
+        }
+      } else if (type === 'ring') {
+        const n = 48, tilt = Math.random() * Math.PI;
+        for (let i = 0; i < n; i++) {
+          const a = (i / n) * Math.PI * 2;
+          const rx = Math.cos(a) * 6 * scale, ry = Math.sin(a) * 2.6 * scale;
+          const vx = rx * Math.cos(tilt) - ry * Math.sin(tilt);
+          const vy = rx * Math.sin(tilt) + ry * Math.cos(tilt);
+          pushSpark(x, y, vx, vy, colors[i % colors.length], { friction: 0.95, gravity: 0.04, decay: 0.014, size: 1.9 });
+        }
+        for (let i = 0; i < 20; i++) {
+          const a = Math.random() * Math.PI * 2, sp = Math.random() * 2.2;
+          pushSpark(x, y, Math.cos(a) * sp, Math.sin(a) * sp, pick(colors), { decay: 0.02, twinkle: true });
+        }
+      } else if (type === 'willow') {
+        const n = 60;
+        for (let i = 0; i < n; i++) {
+          const a = Math.random() * Math.PI * 2, sp = (Math.random() * 0.5 + 0.6) * 5 * scale;
+          pushSpark(x, y, Math.cos(a) * sp, Math.sin(a) * sp, pick(['#ffd36b', '#ffb347', '#fff1c1']),
+            { friction: 0.955, gravity: 0.045, decay: 0.0075, size: 1.6, twinkle: true });
+        }
+      } else {
+        const n = 72;
+        for (let i = 0; i < n; i++) {
+          const a = (i / n) * Math.PI * 2 + Math.random() * 0.08;
+          const sp = (Math.random() * 0.25 + 0.85) * 6.2 * scale;
+          pushSpark(x, y, Math.cos(a) * sp, Math.sin(a) * sp, colors[i % colors.length], { friction: 0.955, gravity: 0.06 });
+        }
+        for (let i = 0; i < 16; i++) {
+          const a = Math.random() * Math.PI * 2, sp = Math.random() * 2.5;
+          pushSpark(x, y, Math.cos(a) * sp, Math.sin(a) * sp, '#ffffff', { decay: 0.025, size: 1.4, twinkle: true });
+        }
+      }
+    }
+
+    class FireworkRocket {
+      constructor(targetX, targetY, colors, type, scale) {
+        this.x = targetX + (Math.random() * 60 - 30);
+        this.y = mainCanvas.height + 10;
+        this.targetY = targetY;
+        const dx = targetX - this.x;
+        const dy = targetY - this.y;
+        const t = 55; // frames to reach target
+        this.vx = dx / t;
+        this.vy = dy / t;
+        this.colors = colors;
+        this.type = type;
+        this.scale = scale || 1;
+        this.history = [];
+        this.dead = false;
+        this.sprite = getGlowSprite('#ffe9a8');
+      }
+      update() {
+        this.history.push({ x: this.x, y: this.y });
+        if (this.history.length > 8) this.history.shift();
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.y <= this.targetY) {
+          this.dead = true;
+          explodeFirework(this.x, this.y, this.colors, this.type, this.scale);
+        }
+      }
+      draw(c) {
+        for (let i = 0; i < this.history.length; i++) {
+          const p = this.history[i];
+          c.globalAlpha = (i + 1) / this.history.length * 0.6;
+          const d = 6 + i;
+          c.drawImage(this.sprite, p.x - d / 2, p.y - d / 2, d, d);
+        }
+        c.globalAlpha = 1;
+        c.drawImage(this.sprite, this.x - 9, this.y - 9, 18, 18);
+      }
+    }
+
+    const FW_PALETTES = [
+      ['#ffd700', '#ffaa00', '#fff3b0'],
+      ['#ff2a70', '#ff8fb1', '#ffd1e0'],
+      ['#00e5ff', '#7df9ff', '#ffffff'],
+      ['#b06bff', '#f15bb5', '#ffd6ff'],
+      ['#ff5e7e', '#ffd700', '#ffffff']
+    ];
+
+    function launchRocket(targetX, targetY, type, palette, scale) {
+      const colors = palette || pick(FW_PALETTES);
+      const tx = targetX !== undefined ? targetX : Math.random() * mainCanvas.width * 0.75 + mainCanvas.width * 0.12;
+      const ty = targetY !== undefined ? targetY : Math.random() * mainCanvas.height * 0.35 + mainCanvas.height * 0.12;
+      const t = type || pick(['peony', 'peony', 'ring', 'willow', 'heart']);
+      fireworkRockets.push(new FireworkRocket(tx, ty, colors, t, scale));
+    }
+
+    function launchGrandFireworksShow(batchCount = 5) {
+      for (let i = 0; i < batchCount; i++) {
+        setTimeout(() => {
+          const tx = (mainCanvas.width * (0.2 + (i % 3) * 0.3)) + (Math.random() * 60 - 30);
+          const ty = (mainCanvas.height * (0.16 + Math.random() * 0.22));
+          launchRocket(tx, ty);
+        }, i * 300);
+      }
+    }
+
+    /* Opening gift show: choreographed, elegant, lightweight (~9 rockets) */
+    function launchOpeningShow() {
+      const W = mainCanvas.width, H = mainCanvas.height;
+      const seq = [
+        [0,    0.22, 0.30, 'peony',  FW_PALETTES[1]],
+        [250,  0.78, 0.30, 'peony',  FW_PALETTES[3]],
+        [900,  0.38, 0.22, 'ring',   FW_PALETTES[2]],
+        [1150, 0.62, 0.22, 'ring',   FW_PALETTES[0]],
+        [1900, 0.50, 0.24, 'heart',  ['#ff2a70', '#ff8fb1', '#ffffff'], 1.5],
+        [2700, 0.15, 0.20, 'willow', null],
+        [2850, 0.85, 0.20, 'willow', null],
+        [3500, 0.30, 0.16, 'heart',  ['#ffd700', '#ff8fb1'], 1.0],
+        [3650, 0.70, 0.16, 'heart',  ['#ffd700', '#ff8fb1'], 1.0]
+      ];
+      seq.forEach(([delay, fx, fy, type, pal, sc]) => {
+        setTimeout(() => launchRocket(W * fx, H * fy, type, pal || FW_PALETTES[0], sc || 1), delay);
+      });
+    }
+
+    /* ================= EASTER EGG: DẢI PHÁO HOA BAY LÊN (THU UYÊN) =================
+       Glowing comets rise in a graceful S-curve with tapered glitter tails,
+       then bloom into small hearts. Throttled + capped so repeated taps never lag. */
+    const STREAMER_PALETTES = [
+      ['#ff3d8b', '#ffb3d1'],
+      ['#ffd700', '#fff1b8'],
+      ['#b77dff', '#f0d4ff'],
+      ['#4fe3ff', '#d4f8ff'],
+      ['#ff7a59', '#ffd0c2']
+    ];
+
+    class FireworkStreamer {
+      constructor(x, targetY, palette, phase) {
+        this.baseX = x;
+        this.x = x;
+        this.y = mainCanvas.height + 20;
+        this.targetY = targetY;
+        this.palette = palette;
+        this.vy = -(Math.random() * 1.5 + 9.5);
+        this.phase = phase;
+        this.age = 0;
+        this.history = [];
+        this.dead = false;
+        this.head = getGlowSprite(palette[1]);
+        this.tail = getGlowSprite(palette[0]);
+      }
+      update() {
+        this.age++;
+        this.history.push({ x: this.x, y: this.y });
+        if (this.history.length > 16) this.history.shift();
+        this.vy *= 0.985;
+        this.y += this.vy;
+        this.x = this.baseX + Math.sin(this.age * 0.09 + this.phase) * 14;
+        if (this.age % 2 === 0) {
+          pushSpark(this.x, this.y, (Math.random() - 0.5) * 0.8, Math.random() * 0.6 + 0.3,
+            this.palette[Math.random() < 0.5 ? 0 : 1], { gravity: 0.03, decay: 0.03, size: 1.2, twinkle: true });
+        }
+        if (this.y <= this.targetY || this.vy > -2.2) {
+          this.dead = true;
+          explodeFirework(this.x, this.y, [this.palette[0], this.palette[1], '#ffffff'], 'heart', 0.75);
+        }
+      }
+      draw(c) {
+        const n = this.history.length;
+        for (let i = 0; i < n; i++) {
+          const p = this.history[i];
+          const k = (i + 1) / n;
+          c.globalAlpha = k * 0.75;
+          const d = 4 + k * 12;
+          c.drawImage(this.tail, p.x - d / 2, p.y - d / 2, d, d);
+        }
+        c.globalAlpha = 1;
+        c.drawImage(this.head, this.x - 13, this.y - 13, 26, 26);
+      }
+    }
+
+    let lastStreamerTime = 0;
+    function triggerThuUyenStreamers() {
+      const now = performance.now();
+      if (now - lastStreamerTime < 1400 || fireworkStreamers.length > 6) return; // throttle spam taps
+      lastStreamerTime = now;
+      synth.playStreamerChime();
+      const count = 7;
+      for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+          const fx = 0.12 + (i / (count - 1)) * 0.76;
+          const x = mainCanvas.width * fx + (Math.random() * 30 - 15);
+          // arc-shaped apex: center higher, sides lower
+          const ty = mainCanvas.height * (0.14 + Math.abs(fx - 0.5) * 0.28 + Math.random() * 0.04);
+          fireworkStreamers.push(new FireworkStreamer(x, ty, STREAMER_PALETTES[i % STREAMER_PALETTES.length], i * 0.9));
+        }, Math.abs(i - (count - 1) / 2) * 120); // launches from the center outward
+      }
+    }
+
+    /* ================= CONTINUOUS FIREWORKS TOGGLE ================= */
+    let isContinuousFireworks = false;
+    let continuousFireworksTimer = null;
+    const btnFirework = document.getElementById('btnFirework');
+    const fireworkBtnText = document.getElementById('fireworkBtnText');
+
+    function toggleContinuousFireworks() {
+      isContinuousFireworks = !isContinuousFireworks;
+      if (isContinuousFireworks) {
+        btnFirework.classList.add('active');
+        if (fireworkBtnText) fireworkBtnText.textContent = 'Dừng Pháo Hoa';
+        btnFirework.title = 'Chạm để dừng bắn pháo hoa';
+        synth.playSparkle();
+
+        // Immediately launch vibrant initial bursts
+        launchGrandFireworksShow(3);
+
+        // Continuously launch fireworks at beautiful organic intervals
+        continuousFireworksTimer = setInterval(() => {
+          if (!isContinuousFireworks) return;
+          const tx = (mainCanvas.width * (0.15 + Math.random() * 0.70));
+          const ty = (mainCanvas.height * (0.12 + Math.random() * 0.26));
+          launchRocket(tx, ty);
+
+          if (Math.random() < 0.45) {
+            setTimeout(() => {
+              if (!isContinuousFireworks) return;
+              const tx2 = (mainCanvas.width * (0.20 + Math.random() * 0.60));
+              const ty2 = (mainCanvas.height * (0.14 + Math.random() * 0.22));
+              launchRocket(tx2, ty2);
+            }, 260);
+          }
+        }, 700);
+      } else {
+        btnFirework.classList.remove('active');
+        if (fireworkBtnText) fireworkBtnText.textContent = 'Bắn Pháo Hoa';
+        btnFirework.title = 'Bắn Pháo Hoa Liên Tục';
+        if (continuousFireworksTimer) {
+          clearInterval(continuousFireworksTimer);
+          continuousFireworksTimer = null;
+        }
+      }
+    }
+
+    btnFirework.addEventListener('click', toggleContinuousFireworks);
+
+    let fairySparkles = [];
+    window.addEventListener('pointermove', (e) => {
+      if (fairySparkles.length < 25) {
+        fairySparkles.push({
+          x: e.clientX,
+          y: e.clientY,
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: Math.random() * -1.5 - 0.4,
+          size: Math.random() * 3.5 + 1.5,
+          alpha: 1,
+          color: ['#ff758c', '#ffd700', '#ffffff', '#ff2a70'][Math.floor(Math.random() * 4)]
+        });
+      }
+    });
+
+    let isHeartActive = true;
+
+    function renderMainLoop(timestamp) {
+      requestAnimationFrame(renderMainLoop);
+      const currentTime = timestamp / 1000;
+      const dt = Math.min(currentTime - (lastTime || currentTime), 0.1);
+      lastTime = currentTime;
+
+      ctx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+
+      if (isHeartActive) {
+        const pulseSpeed = 3.6;
+        const beat = Math.pow(Math.sin(currentTime * pulseSpeed), 8) * 0.12 + Math.pow(Math.sin(currentTime * pulseSpeed + 0.35), 8) * 0.06;
+        const scale = (Math.min(mainCanvas.width, mainCanvas.height) / 720) * (1 + beat);
+
+        const particleRate = heartSettings.particles.length / heartSettings.particles.duration;
+        const count = particleRate * dt;
+        const cx = mainCanvas.width / 2;
+        // SHIFTED UP BY ~50px (~1cm) as specifically requested
+        const cy = mainCanvas.height / 2 - 65;
+
+        for (let i = 0; i < count; i++) {
+          const t = Math.PI - 2 * Math.PI * Math.random();
+          const pos = pointOnHeart(t);
+          const dir = pos.clone().length(heartSettings.particles.velocity * (0.8 + 0.4 * Math.random()));
+          const colorIndex = Math.floor(Math.random() * particleImages.length);
+
+          particlePool.add(
+            cx + pos.x * scale,
+            cy - pos.y * scale,
+            dir.x * scale,
+            -dir.y * scale,
+            colorIndex
+          );
+        }
+
+        particlePool.update(dt);
+        particlePool.draw(ctx, particleImages);
+      }
+
+      for (let i = fairySparkles.length - 1; i >= 0; i--) {
+        const p = fairySparkles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.alpha -= 0.03;
+        p.size *= 0.95;
+
+        if (p.alpha <= 0 || p.size <= 0.5) {
+          fairySparkles.splice(i, 1);
+          continue;
+        }
+
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = fireworkRockets.length - 1; i >= 0; i--) {
+        const r = fireworkRockets[i];
+        r.update();
+        if (r.dead) { fireworkRockets.splice(i, 1); continue; }
+        r.draw(ctx);
+      }
+      for (let i = fireworkStreamers.length - 1; i >= 0; i--) {
+        const s = fireworkStreamers[i];
+        s.update();
+        if (s.dead) { fireworkStreamers.splice(i, 1); continue; }
+        s.draw(ctx);
+      }
+      let w = 0;
+      for (let i = 0; i < fireworkSparks.length; i++) {
+        const sp = fireworkSparks[i];
+        sp.update();
+        if (sp.alpha > 0) { sp.draw(ctx); fireworkSparks[w++] = sp; }
+      }
+      fireworkSparks.length = w;
+      ctx.restore();
+    }
+
+    function resizeCanvases() {
+      skyCanvas.width = window.innerWidth;
+      skyCanvas.height = window.innerHeight;
+      mainCanvas.width = window.innerWidth;
+      mainCanvas.height = window.innerHeight;
+      initSky();
+    }
+    window.addEventListener('resize', resizeCanvases);
+
+    mainCanvas.addEventListener('pointerdown', (e) => {
+      if (isHeartActive) {
+        const count = 30;
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 150 + 50;
+          const color = Math.floor(Math.random() * particleImages.length);
+          particlePool.add(e.clientX, e.clientY, Math.cos(angle) * speed, Math.sin(angle) * speed, color);
+        }
+        synth.playSparkle();
+      }
+    });
+
+    /* ================= 5. TAB NAVIGATION ================= */
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const viewPanels = document.querySelectorAll('.view-panel');
+    const quoteBox = document.getElementById('quoteBox');
+
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        navTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const targetId = tab.getAttribute('data-target');
+        viewPanels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.add('active');
+            // Auto scroll to top of panel so header is 100% visible
+            panel.scrollTop = 0;
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+
+        if (targetId === 'panelHeart') {
+          isHeartActive = true;
+          quoteBox.style.display = 'flex';
+        } else {
+          isHeartActive = false;
+          quoteBox.style.display = 'none';
+        }
+
+        if (targetId === 'panelLetter' && !hasTypedLetter) {
+          startTypewriter();
+        }
+      });
+    });
+
+    /* ================= 6. CAKE & CANDLE INTERACTION ================= */
+    const candleFlame = document.getElementById('candleFlame');
+    const candleSmoke = document.getElementById('candleSmoke');
+    const cakeWishCard = document.getElementById('cakeWishCard');
+    const btnBlowCandle = document.getElementById('btnBlowCandle');
+    const btnRelightCandle = document.getElementById('btnRelightCandle');
+    let isCandleLit = true;
+
+    function blowCandle() {
+      if (!isCandleLit) return;
+      isCandleLit = false;
+      candleFlame.classList.add('blown-out');
+      candleSmoke.classList.add('active');
+
+      synth.playBlowSound();
+
+      setTimeout(() => {
+        cakeWishCard.classList.add('show');
+        cakeWishCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        launchGrandFireworksShow(6);
+      }, 400);
+    }
+
+    function relightCandle() {
+      isCandleLit = true;
+      candleFlame.classList.remove('blown-out');
+      candleSmoke.classList.remove('active');
+      cakeWishCard.classList.remove('show');
+      synth.playSparkle();
+    }
+
+    btnBlowCandle.addEventListener('click', blowCandle);
+    document.getElementById('cakeStage').addEventListener('click', blowCandle);
+    btnRelightCandle.addEventListener('click', relightCandle);
+
+    /* ================= 7. TYPEWRITER LOVE LETTER ================= */
+    let hasTypedLetter = false;
+    let typeIndex = 0;
+    let typeTimer = null;
+    const typedTarget = document.getElementById('letterTypedContent');
+
+    function startTypewriter() {
+      hasTypedLetter = true;
+      typedTarget.textContent = '';
+      typeIndex = 0;
+      if (typeTimer) clearInterval(typeTimer);
+
+      const text = appConfig.letterText;
+      typeTimer = setInterval(() => {
+        if (typeIndex < text.length) {
+          typedTarget.textContent += text.charAt(typeIndex);
+          typeIndex++;
+        } else {
+          clearInterval(typeTimer);
+        }
+      }, 35);
+    }
+
+    // Tap letter paper to replay typing smoothly
+    document.querySelector('.letter-paper').addEventListener('click', () => {
+      startTypewriter();
+      synth.playSparkle();
+    });
+
+    /* ================= 8. POLAROID GALLERY & UPLOAD ================= */
+    const polaroidGrid = document.getElementById('polaroidGrid');
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+
+    function renderPolaroids() {
+      polaroidGrid.innerHTML = '';
+      const rotations = [-2.5, 2, -1.8, 2.5, -2, 1.8, -1.5, 2, -2];
+
+      appConfig.photos.forEach((photo, idx) => {
+        const card = document.createElement('div');
+        card.className = 'polaroid-card';
+        card.style.setProperty('--rot', `${rotations[idx % rotations.length]}deg`);
+
+        const tape = document.createElement('div');
+        tape.className = 'tape-strip';
+
+        const imgBox = document.createElement('div');
+        imgBox.className = 'polaroid-img-box';
+
+        const img = document.createElement('img');
+        img.src = photo.url;
+        if (photo.fallbackUrl) {
+          img.onerror = function() {
+            if (this.src !== photo.fallbackUrl) this.src = photo.fallbackUrl;
+          };
+        }
+        img.alt = photo.caption || 'Kỷ niệm Thu Uyên';
+        img.loading = 'lazy';
+        imgBox.appendChild(img);
+
+        const caption = document.createElement('div');
+        caption.className = 'polaroid-caption';
+        caption.textContent = photo.caption;
+
+        const date = document.createElement('div');
+        date.className = 'polaroid-date';
+        date.textContent = photo.date;
+
+        card.appendChild(tape);
+        card.appendChild(imgBox);
+        card.appendChild(caption);
+        card.appendChild(date);
+
+        card.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxCaption.textContent = `${photo.caption} - ${photo.date}`;
+          lightboxModal.classList.add('show');
+          synth.playSparkle();
+        });
+
+        polaroidGrid.appendChild(card);
+      });
+    }
+
+    lightboxModal.addEventListener('click', () => {
+      lightboxModal.classList.remove('show');
+    });
+
+    const photoFileInput = document.getElementById('photoFileInput');
+    const btnUpload = document.getElementById('btnUploadPhotos');
+    if (btnUpload) {
+      btnUpload.addEventListener('click', () => {
+        photoFileInput.click();
+      });
+    }
+
+    photoFileInput.addEventListener('change', (e) => {
+      const files = Array.from(e.target.files);
+      if (!files.length) return;
+
+      let loadedCount = 0;
+      files.forEach((file, index) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          if (!appConfig.photos[index]) {
+            appConfig.photos[index] = { caption: 'Kỷ niệm yêu thương', date: 'Bên nhau mãi mãi' };
+          }
+          appConfig.photos[index].url = event.target.result;
+          loadedCount++;
+          if (loadedCount === files.length) {
+            localStorage.setItem('SN_UYEN_CONFIG', JSON.stringify(appConfig));
+            renderPolaroids();
+            synth.playSparkle();
+            alert('Đã cập nhật ảnh kỷ niệm thành công! ❤️');
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    /* ================= 9. COUNTDOWN & LOVE COUNTER ================= */
+    function updateCountdown() {
+      const now = new Date();
+      const [day, month] = appConfig.birthday.split('/').map(Number);
+      let targetYear = now.getFullYear();
+      let targetBirthday = new Date(targetYear, month - 1, day, 0, 0, 0);
+
+      if (now > targetBirthday) {
+        targetBirthday = new Date(targetYear + 1, month - 1, day, 0, 0, 0);
+      }
+
+      const isBirthdayToday = now.getDate() === day && now.getMonth() === month - 1;
+      const btBanner = document.getElementById('birthdayTodayBanner');
+      const cdGrid = document.getElementById('countdownGrid');
+      const cdSub = document.getElementById('countdownSubtitle');
+      if (btBanner) btBanner.style.display = isBirthdayToday ? 'block' : 'none';
+      if (cdGrid) cdGrid.style.display = isBirthdayToday ? 'none' : '';
+      if (cdSub) cdSub.style.display = isBirthdayToday ? 'none' : '';
+
+      const diff = targetBirthday - now;
+      if (diff > 0) {
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('cntDays').textContent = String(d).padStart(2, '0');
+        document.getElementById('cntHours').textContent = String(h).padStart(2, '0');
+        document.getElementById('cntMins').textContent = String(m).padStart(2, '0');
+        document.getElementById('cntSecs').textContent = String(s).padStart(2, '0');
+      } else {
+        document.getElementById('cntDays').textContent = '🎉';
+        document.getElementById('cntHours').textContent = 'Hôm';
+        document.getElementById('cntMins').textContent = 'Nay';
+        document.getElementById('cntSecs').textContent = '🎂';
+      }
+
+      const startDate = new Date(appConfig.loveStartDate + 'T00:00:00');
+      const loveDiff = now - startDate;
+      const loveDays = Math.max(0, Math.floor(loveDiff / (1000 * 60 * 60 * 24)));
+      document.getElementById('loveDaysNumber').textContent = `${loveDays} Ngày Bên Nhau 💕`;
+    }
+    setInterval(updateCountdown, 1000);
+
+    /* ================= 10. ROTATING QUOTES (45 SECONDS) ================= */
+    let quoteIndex = 0;
+    const quoteText = document.getElementById('quoteText');
+
+    function rotateQuote() {
+      quoteText.style.opacity = '0';
+      quoteText.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        quoteIndex = (quoteIndex + 1) % appConfig.quotes.length;
+        quoteText.textContent = `"${appConfig.quotes[quoteIndex]}"`;
+        quoteText.style.opacity = '1';
+        quoteText.style.transform = 'translateY(0)';
+      }, 400);
+    }
+
+    document.getElementById('quoteBox').addEventListener('click', () => {
+      rotateQuote();
+      synth.playSparkle();
+      const tapHint = document.getElementById('quoteTapHint');
+      if (tapHint) tapHint.classList.remove('show');
+    });
+    setInterval(rotateQuote, 45000);
+
+    // Show mouse click hint exactly 15 seconds after opening: blinks/clicks twice, then disappears completely
+    setTimeout(() => {
+      const tapHint = document.getElementById('quoteTapHint');
+      if (tapHint) {
+        tapHint.classList.add('show');
+        setTimeout(() => {
+          tapHint.classList.remove('show');
+        }, 3600);
+      }
+    }, 15000);
+
+    /* ================= 11. OPENING SURPRISE GIFT MODAL ================= */
+    const surpriseModal = document.getElementById('surpriseModal');
+    const btnOpenGift = document.getElementById('btnOpenGift');
+
+    function openSurprise() {
+      surpriseModal.classList.add('opened');
+      toggleMusic(true);
+      launchOpeningShow();
+    }
+    btnOpenGift.addEventListener('click', openSurprise);
+
+    /* ================= 12. SETTINGS MODAL ================= */
+    const settingsModal = document.getElementById('settingsModal');
+    function openSettings() {
+      document.getElementById('cfgName').value = appConfig.name;
+      document.getElementById('cfgSender').value = appConfig.senderName || 'Anh Huân';
+      document.getElementById('cfgDate').value = appConfig.birthday;
+      document.getElementById('cfgLoveDate').value = appConfig.loveStartDate;
+      document.getElementById('cfgLetter').value = appConfig.letterText;
+      document.getElementById('cfgMusicUrl').value = appConfig.musicUrl || '';
+      settingsModal.classList.add('show');
+    }
+    function closeSettings() {
+      settingsModal.classList.remove('show');
+    }
+
+    // Press 'S' key to open settings (hidden shortcut for admin)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 's' || e.key === 'S') openSettings();
+    });
+
+    document.getElementById('btnCloseSettings').addEventListener('click', closeSettings);
+
+    document.getElementById('btnSaveSettings').addEventListener('click', () => {
+      appConfig.name = document.getElementById('cfgName').value.trim() || 'Thu Uyên';
+      appConfig.senderName = document.getElementById('cfgSender').value.trim() || 'Anh Huân';
+      appConfig.birthday = document.getElementById('cfgDate').value.trim() || '10/11/2007';
+      appConfig.loveStartDate = document.getElementById('cfgLoveDate').value || '2026-08-30';
+      appConfig.letterText = document.getElementById('cfgLetter').value.trim() || DEFAULT_CONFIG.letterText;
+      appConfig.musicUrl = document.getElementById('cfgMusicUrl').value.trim();
+
+      if (appConfig.musicUrl) {
+        bgAudio.src = appConfig.musicUrl;
+      }
+
+      localStorage.setItem('SN_UYEN_CONFIG', JSON.stringify(appConfig));
+      applyConfigToUI();
+      closeSettings();
+      synth.playSparkle();
+      alert('Đã lưu tùy chỉnh thành công! ❤️');
+    });
+
+    function applyConfigToUI() {
+      document.getElementById('displayHeartName').textContent = appConfig.name;
+      const bnl = document.getElementById('brandNameLeft');
+      const bnr = document.getElementById('brandNameRight');
+      if (bnl) bnl.textContent = appConfig.name;
+      if (bnr) bnr.textContent = appConfig.name;
+      document.getElementById('displayHeartDate').textContent = appConfig.birthday;
+      document.getElementById('displaySenderName').textContent = appConfig.senderName || 'Anh Huân';
+      document.title = `Happy Birthday ${appConfig.name} ❤️`;
+      updateCountdown();
+    }
+
+    /* ================= 13. EASTER EGG: CASCADING FALLING HEARTS ================= */
+    const heartRainContainer = document.createElement('div');
+    heartRainContainer.className = 'heart-rain-container';
+    document.body.appendChild(heartRainContainer);
+
+    function triggerHeartRain() {
+      synth.playSparkle();
+      const heartSymbols = ['💖', '💕', '💗', '💓', '💝', '✨', '❤️'];
+      const totalHearts = 60;
+
+      for (let i = 0; i < totalHearts; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.className = 'falling-heart';
+          heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+          const startX = Math.random() * 94 + 3; // 3% to 97%
+          const size = Math.floor(Math.random() * 20) + 20; // 20px to 40px
+          const duration = (Math.random() * 1.8 + 2.8).toFixed(2); // 2.8s to 4.6s
+          const drift = (Math.random() * 80 - 40).toFixed(0) + 'px';
+          const rot = (Math.random() * 360 - 180).toFixed(0) + 'deg';
+
+          heart.style.left = `${startX}%`;
+          heart.style.fontSize = `${size}px`;
+          heart.style.animationDuration = `${duration}s`;
+          heart.style.setProperty('--drift', drift);
+          heart.style.setProperty('--rot', rot);
+          heart.style.filter = `drop-shadow(0 0 ${Math.floor(Math.random() * 8 + 6)}px rgba(255, 42, 112, 0.9))`;
+
+          heartRainContainer.appendChild(heart);
+
+          heart.addEventListener('animationend', () => {
+            heart.remove();
+          });
+        }, i * 40); // Continuous wave over ~2.4s
+      }
+    }
+
+    const eggLeft = document.getElementById('heartEasterEggLeft');
+    const eggRight = document.getElementById('heartEasterEggRight');
+
+    if (eggLeft) {
+      eggLeft.addEventListener('click', (e) => {
+        e.stopPropagation();
+        triggerHeartRain();
+      });
+    }
+    if (eggRight) {
+      eggRight.addEventListener('click', (e) => {
+        e.stopPropagation();
+        triggerHeartRain();
+      });
+    }
+
+    /* ================= 14. EASTER EGG: DẢI PHÁO HOA BAY LÊN KHI ẤN VÀO "THU UYÊN" ================= */
+    const displayHeartName = document.getElementById('displayHeartName');
+    const brandNameLeft = document.getElementById('brandNameLeft');
+    const brandNameRight = document.getElementById('brandNameRight');
+
+    if (displayHeartName) {
+      displayHeartName.addEventListener('click', (e) => {
+        e.stopPropagation();
+        triggerThuUyenStreamers();
+      });
+    }
+
+    if (brandNameLeft) {
+      brandNameLeft.addEventListener('click', (e) => {
+        e.stopPropagation();
+        triggerThuUyenStreamers();
+      });
+    }
+
+    if (brandNameRight) {
+      brandNameRight.addEventListener('click', (e) => {
+        e.stopPropagation();
+        triggerThuUyenStreamers();
+      });
+    }
+
+    /* ================= 14. INITIALIZATION ================= */
+    window.addEventListener('DOMContentLoaded', () => {
+      resizeCanvases();
+      applyConfigToUI();
+      renderPolaroids();
+      updateCountdown();
+      renderSky();
+      requestAnimationFrame(renderMainLoop);
+    });
+  </script>
+</body>
+</html>

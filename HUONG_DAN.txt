@@ -1,0 +1,51 @@
+========================================================================
+🎉 HƯỚNG DẪN SỬ DỤNG WEB CHÚC MỪNG SINH NHẬT DÀNH CHO THU UYÊN 💖
+(Phiên bản nâng cấp đặc biệt dành riêng cho Anh Huân & Thu Uyên)
+========================================================================
+
+1. CÁCH MỞ VÀ TRẢI NGHIỆM:
+   - Nhấp đúp chuột vào file `Love.html` (hoặc `index.html`) để mở trên trình duyệt
+     (Chrome, Cốc Cốc, Edge, Safari trên cả điện thoại và máy tính).
+   - Màn hình đầu tiên là "Hộp Quà Kỳ Diệu 🎁".
+   - Bấm vào hộp quà để mở: Âm nhạc lãng mạn cất lên, pháo hoa rực rỡ bùng nổ!
+
+2. CÁC TÍNH NĂNG ĐẶC BIỆT VỪA CẬP NHẬT HOÀN THIỆN:
+   🎆 TÍNH NĂNG BÍ MẬT 1 - DẢI PHÁO HOA BAY VÚT TỪ DƯỚI LÊN:
+      - Bấm vào chữ "Thu Uyên" (ở giữa hình trái tim lớn hoặc trên thanh tiêu đề):
+        14 dải pháo hoa lấp lánh dạng dải lụa phát sáng sẽ đồng loạt phóng vút
+        từ đáy màn hình lượn sóng bay lên không trung, rải mưa ánh kim lấp lánh
+        và nở rộ thành những dải thác ánh sáng liễu rủ huyền ảo kèm chuông ngân
+        lãng mạn. Hiệu ứng hoàn toàn khác biệt và độc đáo so với pháo hoa thông thường!
+
+   💖 TÍNH NĂNG BÍ MẬT 2 - CƠN MƯA TRÁI TIM:
+      - Bấm vào biểu tượng trái tim 💖 cạnh chữ "Thu Uyên" trên thanh tiêu đề:
+        Một cơn mưa vô vàn trái tim lấp lánh (💖 💕 💗 💓 ✨) sẽ bay từ trên cao rơi
+        xuống khắp màn hình cực kỳ lãng mạn!
+
+   💌 CHỮ KÝ BỨC THƯ TÌNH ĐÃ TINH CHỈNH HOÀN HẢO:
+      - Bỏ dấu phẩy, chữ "Mãi yêu em" viết hoa bay bổng, được nâng cao hơn một chút,
+        tạo khoảng cách thanh thoát, hài hòa và không bị dính sát vào khung chữ ký
+        "[ 💖 Anh Huân 💖 ]" phía dưới.
+
+   🔒 BẢO MẬT & RIÊNG TƯ TUYỆT ĐỐI (ĐÃ BỎ NHẤP ĐÚP CHUỘT):
+      - Đã xóa hoàn toàn tính năng nhấp đúp chuột mở bảng cài đặt. Người yêu sẽ
+        không bao giờ vô tình nhìn thấy cửa sổ thông tin kỹ thuật này.
+      - Khi nào Anh Huân muốn chỉnh sửa thông tin, chỉ cần nhấn phím `S` trên bàn phím.
+
+   ⏳ CÂN ĐỐI DÒNG CHỮ ĐẾM NGÀY YÊU:
+      - Dòng chữ được ngắt đôi cân xứng hoàn hảo:
+            Kể từ ngày 30/08/2026, từng giây phút trôi qua
+            trái tim anh đều trọn vẹn hướng về Thu Uyên 💕
+        Không còn tình trạng chữ rớt dòng lẻ loi.
+
+   📸 ALBUM KỶ NIỆM GỌN GÀNG:
+      - Đã bỏ nút "Thêm ảnh mới", giữ album ảnh thuần khiết, thanh lịch.
+      - 9 bức ảnh thật với lời tựa ngọt ngào, hiển thị rộng rãi, cuộn dọc nhẹ nhàng,
+        chạm vào ảnh để phóng to toàn màn hình cực nét.
+
+   🎆 NÚT BẮN PHÁO HOA LIÊN TỤC:
+      - Góc dưới bên phải: Nhấn lần 1 bắn pháo hoa liên tục không ngừng;
+        Nhấn lần 2 để dừng lại.
+
+Chúc Anh Huân và Thu Uyên luôn ngập tràn tình yêu và hạnh phúc viên mãn bên nhau! 💖
+========================================================================
